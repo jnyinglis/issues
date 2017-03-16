@@ -4,6 +4,8 @@ defmodule Issues.Mixfile do
   def project do
     [
       app:              :issues,
+      name:             "Issues",
+      source_url:       "https://github.com/jnyinglis/issues",
       escript:          escript_config(),
       version:          "0.1.0",
       elixir:           "~> 1.4",
@@ -35,6 +37,8 @@ defmodule Issues.Mixfile do
       {:httpoison,  "~> 0.9"},
       {:poison,     "~> 2.2"},
       {:quixir,     "~> 0.9", only: :test},
+      {:ex_doc,     "~> 0.12"},
+      {:earmark,    "~> 1.0", override: true}
     ]
   end
 
