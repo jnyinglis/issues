@@ -17,4 +17,8 @@ defmodule TableFormatterTest do
 
     def split_with_three_columns, do: TF.split_into_columns(simple_test_data, headers)
 
+    test "split_into_columns" do
+        columns = split_with_three_columns
+        assert  length(columns) == length(headers)
+    end
 end
