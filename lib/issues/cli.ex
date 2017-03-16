@@ -1,5 +1,7 @@
 defmodule Issues.CLI do
 
+  import Issues.TableFormatter, only: [ print_table_for_columns: 2 ]
+
   @default_count 4
 
   @moduledoc """
@@ -35,7 +37,7 @@ defmodule Issues.CLI do
     |> decode_response
     |> sort_into_ascending_order()
     |> Enum.take(count)
-    |> IO.inspect()
+    |> print_table_for_columns(["number", "created_at", "title"])
   end
 
   def sort_into_ascending_order(list_of_issues) do
